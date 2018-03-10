@@ -31,7 +31,6 @@ function wphierarchy_enqueue_style()
   wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/style.css', [],
   time(), 'all' );
 
-
 }
 
 
