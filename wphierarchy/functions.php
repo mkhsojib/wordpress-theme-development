@@ -39,4 +39,16 @@ function wphierarchy_enqueue_style()
 add_action( 'wp_enqueue_scripts', 'wphierarchy_enqueue_style' );
 
 
+
+
+// register menu locations
+
+register_nav_menus( [
+
+  'main-menu' => esc_html__( 'Main Menu', 'wphierarchy' ),
+  'footer-menu' => esc_html__( 'Footer Menu', 'wphierarchy' ),
+
+  ] );
+
+
 ?>
