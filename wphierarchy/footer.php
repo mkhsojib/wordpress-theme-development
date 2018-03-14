@@ -8,5 +8,7 @@
   </div>
 
 <!-- footer -->
+<?php dynamic_sidebar( 'footer-sidebar' ); ?>
+
 </body>
 </html>
