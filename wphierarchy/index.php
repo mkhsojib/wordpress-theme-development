@@ -1,41 +1,51 @@
 <?php get_header(); ?>
 
-<div id="primary" class="content-area">
+  <div id="primary" class="content-area">
 
     <main id="main" class="site-main" role="main">
 
-      <article id="post-<?php the_id(); ?>" <?php post_class(); ?>>
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
+        <article id="post-<?php the_ID(); ?>"  <?php post_class(); ?>>
 
-      <header class="entry-header">
+          <header class="entry-header">
 
-          <h1>index.php</h1>
+            <?php the_title( '<h1>', '</h1>' ); ?>
 
+          </header>
 
+          <div class="entry-content">
 
+            <?php the_content(); ?>
 
-      </header>
+          </div>
 
-      <div class="entry-content">
+        </article>
 
+      <?php endwhile; else : ?>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <article id="post-<?php the_ID(); ?>"  <?php post_class(); ?>>
 
+          <header class="entry-header">
 
+            <h1><?php esc_html_e( '404', 'wphierarchy' ); ?></h1>
 
-      </div>
+          </header>
 
-      </article>
+          <div class="entry-content">
 
+            <p><?php esc_html_e( 'Sorry! No content found.', 'wphierarchy' ); ?></p>
 
+          </div>
+
+        </article>
+
+      <?php endif; ?>
 
     </main>
 
+  </div>
 
-</div>
-
-<?php get_sidebar( '' ); ?>
-
-
+  <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
