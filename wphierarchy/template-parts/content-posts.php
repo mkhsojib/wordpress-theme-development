@@ -10,7 +10,7 @@
 
     <div class="byline">
 
-      <?php esc_html_e( 'Author:' ); ?> <?php the_author(); ?>
+      <?php esc_html_e( 'Author:' ); ?> <?php the_author_posts_link(); ?>
 
     </div>
 

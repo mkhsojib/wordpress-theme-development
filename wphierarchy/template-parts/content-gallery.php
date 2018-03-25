@@ -5,7 +5,7 @@
     <span class="dashicons dashicons-format-<?php echo get_post_format( $post->id ); ?>"></span>
 
 
-    <p><?php esc_html_e( 'Enjoy this gallery post', 'wphierarchy' ); ?></p>
+
 
 
 
